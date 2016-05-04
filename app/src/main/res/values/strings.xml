@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">WayFindingx</string>
     <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="api_upload_location">uploadLocationRecordsApi</string>
+    <string name="api_upload_route">UploadRouteApi</string>
+    <string name="api_authentication">AuthenNApi</string>
+    <string name="preference_file_key">UserInfo</string>
+    <string name="preference_authenN_response">authentication_response</string>
+    <string name="login_success">Login successfully</string>
+    <string name="login_fail">Login failed</string>
+    <string name="connection_error">Connection error</string>
+    <string name="no_location_detected">Check location setting</string>
 </resources>
