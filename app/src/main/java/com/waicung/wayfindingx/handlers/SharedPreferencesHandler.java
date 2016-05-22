@@ -2,9 +2,14 @@ package com.waicung.wayfindingx.handlers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.waicung.wayfindingx.R;
 import com.waicung.wayfindingx.models.AuthenNResponse;
+import com.waicung.wayfindingx.models.Step;
+
+import java.util.ArrayList;
 
 
 /**
@@ -13,10 +18,11 @@ import com.waicung.wayfindingx.models.AuthenNResponse;
 public class SharedPreferencesHandler {
     private Context context;
     private SharedPreferences mSharedPreference;
+    String TAG = "SharedPreferenceHandler";
 
     public  SharedPreferencesHandler(Context context){
         this.context = context;
-        mSharedPreference = context.getSharedPreferences("UserInfo",Context.MODE_PRIVATE);
+        mSharedPreference = context.getSharedPreferences(context.getString(R.string.preference_file_key),Context.MODE_PRIVATE);
     }
 
     public SharedPreferences getmSharedPreference(){
@@ -31,6 +37,7 @@ public class SharedPreferencesHandler {
     }
 
     public void setNewAuthenNResponse(String jsonString, String username, String password){
+        Log.i(TAG, "Save response" + jsonString);
         SharedPreferences.Editor editor = mSharedPreference.edit();
         editor.clear();
         editor.commit();
@@ -44,7 +51,18 @@ public class SharedPreferencesHandler {
         return getAuthenNResponse().getStatus();
     }
 
+    public void clearValues(){
+        SharedPreferences.Editor editor = mSharedPreference.edit();
+        editor.clear();
+        editor.commit();
+    }
 
 
+    public SharedPreferencesHandler update() {
+        return new SharedPreferencesHandler(this.context);
+    }
 
+    public ArrayList<Step> getSteps(){
+        return (ArrayList<Step>) getAuthenNResponse().getSteps();
+    }
 }

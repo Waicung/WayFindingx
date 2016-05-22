@@ -38,7 +38,7 @@ public class UploadDataAsyncTask extends AsyncTask{
 
     @Override
     protected Object doInBackground(Object[] params) {
-        String resource = (String)params[1];
+        String resource = (String)params[0];
         String api = null;
         String sentData = null;
         int route_id;
@@ -69,6 +69,7 @@ public class UploadDataAsyncTask extends AsyncTask{
             HttpRequestHandler HR = new HttpRequestHandler();
             String response = HR.postRequest(api,sentData);
             Log.i(TAG, response);
+            return response;
         } catch (UnsupportedEncodingException e) {
             Log.e(TAG, e.getMessage());
         }

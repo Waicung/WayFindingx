@@ -13,8 +13,8 @@ public class AuthenNResponse {
     public final int CODE_NOT_TESTED = 1110;
     public final int CODE_ALL_TESTED = 1111;
 
-    private int statusCode;
-    private boolean successTag;
+    private int status;
+    private boolean success;
     private String message;
     private String user_id;
     private String route_id;
@@ -23,7 +23,7 @@ public class AuthenNResponse {
     private List<Step> steps;
 
     public boolean getSuccess(){
-        return successTag;
+        return success;
     }
 
     public String getMessage(){
@@ -35,7 +35,7 @@ public class AuthenNResponse {
     }
 
     public int getStatus(){
-        return this.statusCode;
+        return this.status;
     }
 
     public String getRoute_id(){

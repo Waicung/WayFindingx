@@ -17,7 +17,7 @@ public class HttpRequestHandler {
     private URL requestUrl;
     private String sentData;
     private HttpURLConnection httpConn;
-    private final String TAG = "HttprequestHandler";
+    private final String TAG = "HttpRequestHandler";
 
     public HttpRequestHandler(){}
 
@@ -35,6 +35,7 @@ public class HttpRequestHandler {
         catch (IOException e){
             Log.e(TAG, e.getMessage());
         }
+        Log.i(TAG, "getRequest: " + Str.toString());
         return Str.toString();
     }
 

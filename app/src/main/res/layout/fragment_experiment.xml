@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gps_indicator"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_gps"
+        android:visibility="gone"/>
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"></android.support.v7.widget.RecyclerView>-->
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:textSize="@dimen/abc_text_size_display_1_material" />
+
+
+
+</RelativeLayout>

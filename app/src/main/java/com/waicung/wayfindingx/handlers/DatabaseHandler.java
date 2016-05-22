@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 /**
  * Created by waicung on 04/05/2016.
+ * SQLite database operation for location recording
  */
 public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 2;
@@ -53,10 +54,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //method for user record insertion
-    public boolean insertLocation (Double lagitude, Double longitude, long time, int step, String event){
+    public boolean insertLocation (Double latitude, Double longitude, long time, int step, String event){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(LOCATION_LAT, lagitude);
+        contentValues.put(LOCATION_LAT, latitude);
         contentValues.put(LOCATION_LNG, longitude);
         contentValues.put(LOCATION_TIMESTAMP, time);
         contentValues.put(LOCATION_STEP, step);
@@ -70,7 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ArrayList<LocationRecord> locations = new ArrayList<>();
         Cursor cursor;
         SQLiteDatabase db = this.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM " + LOCATION_TABLE_NAME + " LIMIT 10", null);
+        cursor = db.rawQuery("SELECT * FROM " + LOCATION_TABLE_NAME, null);
         while (cursor.moveToNext()){
             double lat = cursor.getDouble(
                     cursor.getColumnIndexOrThrow(LOCATION_LAT)
@@ -90,6 +91,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             LocationRecord location = new LocationRecord(lat,lng,time,step_number,event);
             locations.add(location);
         }
+        cursor.close();
         return locations;
 
     }

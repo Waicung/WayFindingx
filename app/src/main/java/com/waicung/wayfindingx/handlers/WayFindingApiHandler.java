@@ -25,6 +25,8 @@ public class WayFindingApiHandler {
         //TODO set up when the app is installed
         Properties config = new Properties();
         String locationApi  = "http://wayfinding.magicjane.org/receiveLocations.php";
+        //String locationApi  = "http://wayfinding.magicjane.org/receiveLocations_wrong.php";
+
         config.put(context.getString(R.string.api_upload_location),locationApi);
         String routeApi  = "http://wayfinding.magicjane.org/receiveRoute.php";
         config.put(context.getString(R.string.api_upload_route),routeApi);

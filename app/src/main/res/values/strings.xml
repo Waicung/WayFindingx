@@ -10,5 +10,18 @@
     <string name="login_success">Login successfully</string>
     <string name="login_fail">Login failed</string>
     <string name="connection_error">Connection error</string>
-    <string name="no_location_detected">Check location setting</string>
+    <string name="no_location_detected">Failed to record location</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="already_login">Hi, user. You have already logged in.</string>
+    <string name="logout">Log out</string>
+    <string name="welcome_to_wayfindingx">Welcome to WayFindingx</string>
+    <string name="thank_you">All Done. Thank you so much!!</string>
+    <string name="start">START</string>
+    <string name="feedback">Choose from below</string>
+    <string name="continue_experiment">Continue</string>
+    <string name="give_up">I am lose</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

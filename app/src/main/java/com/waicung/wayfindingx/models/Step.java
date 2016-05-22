@@ -4,7 +4,7 @@ package com.waicung.wayfindingx.models;
  * Created by waicung on 04/05/2016.
  */
 public class Step {
-    private int step_id;
+    private int step_number;
     private Point start_point;
     private Point end_point;
     private String instruction;
@@ -15,9 +15,9 @@ public class Step {
 
     public Step(int step_id, Point start_point, Point end_point, String instruction, int duration, int distance){
         if(step_id>=0){
-            this.step_id = step_id;
+            this.step_number = step_id;
         }else{
-            this.step_id = 0;
+            this.step_number = 0;
         }
         this.start_point = start_point;
         this.end_point = end_point;
@@ -29,7 +29,7 @@ public class Step {
     public Step clone(){
         if(start_point!=null &&
                 end_point!=null) {
-            int step_id = this.step_id;
+            int step_id = this.step_number;
             Point start_point = this.start_point.clone();
             Point end_point = this.end_point.clone();
             int duration = this.duration;
@@ -47,6 +47,14 @@ public class Step {
 
     public void setInstruction(String instruction){
         this.instruction = instruction;
+    }
+
+    public int getStep_number(){
+        return  this.step_number;
+    }
+
+    public String  getInstruction(){
+        return this.instruction;
     }
 
 }
