@@ -4,7 +4,7 @@ Testing people's reaction to erroneous route directions
 With the WayfindingServerSide framework, this (Android)app can be used for tracking user using literal navigation.
 The App can be used directly can be found:
 
-#There are three primary functions
+#There are three functions
 ##1. Google direction search
 This process is designed to be done by administrators.
 Administrators will have to log in each user account to request for Google direction. The result will be uploaded to the server automatically.
